@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper Title | IEEE Template</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<style>
+
+@page {
+  size: letter;
+  margin: 0.75in 0.625in 1in 0.625in;
+}
+
+body {
+  margin: 0;
+  background: #d9d9d9;
+  font-family: "Times New Roman", Times, "Liberation Serif", serif;
+  font-size: 10pt;
+  line-height: 1.2;
+  color: #000;
+}
+.paper {
+  width: 8.5in;
+  min-height: 11in;
+  box-sizing: border-box;
+  margin: 24px auto;
+  padding: 0.75in 0.625in 1in;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+@media print {
+  body { background: none; }
+  .paper { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
+}
+@media (max-width: 8.6in) {
+
+  .paper { width: auto; padding: 16px; margin: 0; }
+  .columns { column-count: 1 !important; }
+}
+
+.title {
+  font-size: 24pt;
+  line-height: 1.1;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 14pt;
+}
+.authors {
+  display: flex;
+  justify-content: space-around;
+  gap: 12pt;
+  text-align: center;
+  margin-bottom: 14pt;
+}
+.author { flex: 1; font-size: 10pt; line-height: 1.25; }
+.author .name { font-size: 11pt; }
+.author i { font-style: italic; }
+.author .email { font-family: "Courier New", monospace; font-size: 9pt; }
+
+.columns {
+  column-count: 2;
+  column-gap: 0.25in;
+  text-align: justify;
+  hyphens: auto;
+}
+p { margin: 0 0 0; text-indent: 0.2in; }
+p.noindent, .abstract p, .keywords p { text-indent: 0; }
+
+.abstract, .keywords { font-size: 9pt; font-weight: bold; margin-bottom: 8pt; }
+.abstract p, .keywords p { font-weight: bold; }
+.abstract i, .keywords i { font-style: italic; }
+
+.columns { counter-reset: sec; }
+h2 {
+  counter-increment: sec;
+  counter-reset: sub;
+  font-size: 10pt;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 12pt 0 4pt;
+  break-after: avoid;
+}
+h2::before { content: counter(sec, upper-roman) ".  "; }
+h2.plain { counter-increment: none; }
+h2.plain::before { content: none; }
+h3 {
+  counter-increment: sub;
+  font-size: 10pt;
+  font-style: italic;
+  font-weight: normal;
+  text-align: left;
+  margin: 8pt 0 3pt;
+  break-after: avoid;
+}
+h3::before { content: counter(sub, upper-alpha) ".  "; }
+
+.equation {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  margin: 6pt 0;
+  text-indent: 0;
+}
+.equation .expr { text-align: center; font-style: italic; }
+.equation .num { text-align: right; }
+
+figure { margin: 8pt 0; break-inside: avoid; text-align: center; }
+figcaption, .table-caption { font-size: 8pt; text-align: center; }
+figure .placeholder {
+  border: 1px dashed #777;
+  height: 1.6in;
+  display: grid;
+  place-items: center;
+  font-size: 8pt;
+  color: #555;
+}
+figure.wide { column-span: all; }
+
+.table-caption {
+  text-transform: uppercase;
+  margin: 8pt 0 3pt;
+  break-after: avoid;
+}
+.table-caption::before { content: "TABLE " counter(tbl, upper-roman) "\A"; white-space: pre; }
+.table-caption { counter-increment: tbl; }
+.columns { counter-reset: sec tbl; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8pt;
+  margin-bottom: 8pt;
+  break-inside: avoid;
+}
+th, td { padding: 2pt 4pt; text-align: center; }
+thead th { border-top: 1px solid #000; border-bottom: 1px solid #000; font-weight: normal; }
+tbody tr:last-child td { border-bottom: 1px solid #000; }
+
+.references { font-size: 8pt; text-align: left; padding: 0; margin: 0; list-style: none; counter-reset: ref; }
+.references li {
+  counter-increment: ref;
+  position: relative;
+  padding-left: 0.3in;
+  margin-bottom: 3pt;
+  text-align: justify;
+}
+.references li::before { content: "[" counter(ref) "]"; position: absolute; left: 0; }
+</style>
+</head>
+
+<body>
+<div class="paper">
+
+  <h1 class="title">Title of Your Paper: Capitalize the First Word and Major Terms</h1>
+
+  <div class="authors">
+    <div class="author">
+      <div class="name">First Author</div>
+      <i>Department of Computer Science</i><br>
+      <i>Air University</i><br>
+      Islamabad, Pakistan<br>
+      <span class="email">first@example.com</span>
+    </div>
+    <div class="author">
+      <div class="name">Second Author</div>
+      <i>Department of Computer Science</i><br>
+      <i>Air University</i><br>
+      Islamabad, Pakistan<br>
+      <span class="email">second@example.com</span>
+    </div>
+    <div class="author">
+      <div class="name">Third Author</div>
+      <i>Department of Electrical Engineering</i><br>
+      <i>Institution Name</i><br>
+      City, Country<br>
+      <span class="email">third@example.com</span>
+    </div>
+  </div>
+
+  <main class="columns">
+
+    <section class="abstract">
+      <p><i>Abstract</i>—This document is a template for IEEE-style papers. Write a
+      single paragraph of 150 to 250 words that states the problem, your method,
+      your main result, and why it matters. Do not use citations, equations, or
+      abbreviations here unless they are common.</p>
+    </section>
+
+    <section class="keywords">
+      <p><i>Index Terms</i>—keyword one, keyword two, keyword three, keyword four</p>
+    </section>
+
+    <h2>Introduction</h2>
+    <p>Start by describing the problem and why it is worth solving. Cite earlier work
+    with square brackets, for example [1]. Multiple sources are written as [2], [3].
+    State your contribution clearly in the last paragraph of this section.</p>
+    <p>The paper is organised as follows. Section II reviews related work, Section III
+    describes the method, and Section IV reports results.</p>
+
+    <h2>Related Work</h2>
+    <h3>Topic One</h3>
+    <p>Summarise what earlier authors did and where their approach falls short. Keep
+    each paragraph focused on one idea.</p>
+    <h3>Topic Two</h3>
+    <p>Sub-headings are numbered A, B, C automatically. Add or remove them freely.</p>
+
+    <h2>Methodology</h2>
+    <p>Describe your approach so that another student could repeat it. Equations are
+    centred and numbered on the right:</p>
+    <div class="equation">
+      <span class="expr">y = f(x; θ) + ε</span>
+      <span class="num">(1)</span>
+    </div>
+    <p class="noindent">where <i>x</i> is the input, <i>θ</i> are the parameters, and
+    <i>ε</i> is noise. Refer to it in the text as (1).</p>
+
+    <figure>
+      <div class="placeholder">Replace with &lt;img src="figure1.png"&gt;</div>
+      <figcaption>Fig. 1. Caption goes below the figure, in sentence case.</figcaption>
+    </figure>
+
+    <h2>Results</h2>
+    <p>Present your findings and refer to every table and figure in the text. Table
+    captions sit above the table; figure captions sit below.</p>
+
+    <div class="table-caption">Comparison of Methods</div>
+    <table>
+      <thead>
+        <tr><th>Method</th><th>Accuracy (%)</th><th>Time (s)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Baseline</td><td>81.2</td><td>12.4</td></tr>
+        <tr><td>Method A</td><td>85.7</td><td>9.8</td></tr>
+        <tr><td>Proposed</td><td>91.3</td><td>7.1</td></tr>
+      </tbody>
+    </table>
+
+    <figure class="wide">
+      <div class="placeholder" style="height:2in">Full-width figure (spans both columns)</div>
+      <figcaption>Fig. 2. Use the “wide” class for large figures or tables.</figcaption>
+    </figure>
+
+    <h2>Conclusion</h2>
+    <p>Restate what you did and what you found, mention limitations honestly, and
+    suggest what could be done next. Do not introduce new results here.</p>
+
+    <h2 class="plain">Acknowledgment</h2>
+    <p>Thank supervisors, funding bodies, or anyone who helped. Delete this section if
+    it does not apply.</p>
+
+    <h2 class="plain">References</h2>
+    <ol class="references">
+      <li>A. Author, B. Author, and C. Author, “Title of the article,” <i>Journal Name</i>, vol. 10, no. 2, pp. 100–110, 2024.</li>
+      <li>D. Author, <i>Title of the Book</i>, 2nd ed. City, Country: Publisher, 2022.</li>
+      <li>E. Author and F. Author, “Title of the paper,” in <i>Proc. Conference Name</i>, City, Country, 2023, pp. 1–8.</li>
+    </ol>
+
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

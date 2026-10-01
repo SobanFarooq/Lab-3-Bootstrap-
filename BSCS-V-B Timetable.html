@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BSCS-V-B Timetable</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+<style>
+:root{
+  --bg:#2a2b2e; --panel:#323438; --cell:#3d3f44; --day:#26272a; --line:#4a4c52;
+  --text:#ececec; --muted:#a3a5aa;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.35}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 40px}
+h1{margin:0 0 20px;font-size:1.7rem;font-weight:600;letter-spacing:-.02em}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:10px}
+.tt{min-width:1040px}
+.head,.row{display:grid;grid-template-columns:64px repeat(9,minmax(104px,1fr));gap:6px}
+.head{margin-bottom:6px}
+.head div{color:var(--muted);font-size:.72rem;font-weight:500;letter-spacing:.01em;font-variant-numeric:tabular-nums;text-align:center;padding:4px 0}
+.row{margin-bottom:6px;min-height:104px}
+.row:last-child{margin-bottom:0}
+.day{display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:600;color:var(--muted);background:var(--day);border-radius:8px}
+.c{display:flex;flex-direction:column;justify-content:space-between;gap:8px;padding:10px 11px;background:var(--cell);border:1px solid var(--line);border-radius:8px}
+.c b{font-size:.85rem;font-weight:600;letter-spacing:-.005em;color:var(--text)}
+.c small{display:block;margin-top:3px;font-size:.68rem;color:var(--muted)}
+.c span{font-size:.74rem;font-weight:500;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>BSCS-V-B (Shift-I)</h1>
+  <div class="scroll">
+    <div class="tt">
+      <div class="head">
+        <div></div>
+        <div>8:00 – 9:00</div><div>9:00 – 10:00</div><div>10:00 – 11:00</div><div>11:00 – 12:00</div><div>12:00 – 1:00</div><div>1:00 – 2:00</div><div>2:00 – 3:00</div><div>3:00 – 4:00</div><div>4:00 – 5:00</div>
+      </div>
+
+      <div class="row">
+        <div class="day">Mo</div>
+        <div class="c" style="grid-column:3"><div><b>Full Stack Web Development</b><small>Mr Hafiz Obiad Ullah Khan</small></div><span>C-205</span></div>
+        <div class="c" style="grid-column:4"><div><b>Linear Algebra</b><small>Dr Waqas Sarwar Abbasi</small></div><span>C-301</span></div>
+        <div class="c" style="grid-column:5 / span 3"><div><b>Artificial Intelligence Lab</b><small>Ms Kanwal Ejaz</small></div><span>Lab 5, A Block</span></div>
+        <div class="c" style="grid-column:8"><div><b>Operating Systems</b><small>Ms Warda Aslam</small></div><span>C-301</span></div>
+      </div>
+
+      <div class="row">
+        <div class="day">Tu</div>
+        <div class="c" style="grid-column:2"><div><b>Operating Systems</b><small>Ms Warda Aslam</small></div><span>C-206</span></div>
+        <div class="c" style="grid-column:3"><div><b>Full Stack Web Development</b><small>Mr Hafiz Obiad Ullah Khan</small></div><span>C-301</span></div>
+        <div class="c" style="grid-column:4"><div><b>Introduction to Management</b><small>Ms Ayesha Munir</small></div><span>C-206</span></div>
+        <div class="c" style="grid-column:7"><div><b>Linear Algebra</b><small>Dr Waqas Sarwar Abbasi</small></div><span>C-205</span></div>
+        <div class="c" style="grid-column:8"><div><b>Advisory Class</b><small>Ms Kanwal Ejaz</small></div><span>C-201</span></div>
+      </div>
+
+      <div class="row">
+        <div class="day">We</div>
+        <div class="c" style="grid-column:3 / span 2"><div><b>Design and Analysis of Algorithms</b><small>Dr Mehdi Hassan, Mr Muhammad Junaid Nazar</small></div><span>Lecture Hall 01</span></div>
+        <div class="c" style="grid-column:8"><div><b>Artificial Intelligence</b><small>Ms Kanwal Ejaz</small></div><span>C-205</span></div>
+      </div>
+
+      <div class="row">
+        <div class="day">Th</div>
+        <div class="c" style="grid-column:3 / span 2"><div><b>Design and Analysis of Algorithms</b><small>Dr Mehdi Hassan, Mr Muhammad Junaid Nazar</small></div><span>Lecture Hall 01</span></div>
+        <div class="c" style="grid-column:5 / span 3"><div><b>Operating Systems Lab</b><small>Ms Warda Aslam</small></div><span>Lab 13, C Block (3rd Floor)</span></div>
+        <div class="c" style="grid-column:8"><div><b>Artificial Intelligence</b><small>Ms Kanwal Ejaz</small></div><span>C-302</span></div>
+      </div>
+
+      <div class="row">
+        <div class="day">Fr</div>
+        <div class="c" style="grid-column:3"><div><b>Introduction to Management</b><small>Ms Ayesha Munir</small></div><span>C-203</span></div>
+        <div class="c" style="grid-column:4"><div><b>Linear Algebra</b><small>Dr Waqas Sarwar Abbasi</small></div><span>C-203</span></div>
+        <div class="c" style="grid-column:5 / span 3"><div><b>Full Stack Web Development Lab</b><small>Mr Hafiz Obiad Ullah Khan</small></div><span>Lab 5, A Block</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
